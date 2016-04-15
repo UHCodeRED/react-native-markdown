@@ -3,9 +3,11 @@ var {
   Image,
   Text,
   View,
+  Dimensions,
 } = React;
 var SimpleMarkdown = require('simple-markdown');
 var _ = require('lodash');
+var deviceScreen = Dimensions.get('window');
 
 module.exports = function(styles) {
   return {
@@ -79,10 +81,44 @@ module.exports = function(styles) {
     },
     image: {
       react: function(node, output, state) {
+
+        let imgStyle = styles.image; // start with default image rules
+
+        // check for image width/height if it is passed in thru the url
+        let queryStringIndex = node.target.indexOf('?');
+        if(queryStringIndex > -1){
+          const queryString = node.target.substring(queryStringIndex+1);
+          const queryParams = queryString.split('&');
+
+          let width, height;
+          for(let keyValString of queryParams){
+            const keyValPair = keyValString.split('=');
+            if(keyValPair[0] === 'width'){
+              width = +keyValPair[1];
+            }else if(keyValPair[0] === 'height'){
+              height = +keyValPair[1];
+            }
+          }
+
+          if(width && height){
+            if(width > deviceScreen.width){
+              const aspectRatio = width / height;
+
+              let newWidth = 0.6 * deviceScreen.width;
+              let newHeight = newWidth / aspectRatio;
+
+              imgStyle = {
+                width: newWidth,
+                height: newHeight
+              }
+            }
+          }
+        }
+
         return React.createElement(Image, {
           key: state.key,
           source: { uri: node.target },
-          style: styles.image
+          style: imgStyle
         });
       }
     },
