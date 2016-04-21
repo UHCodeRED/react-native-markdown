@@ -101,6 +101,11 @@ module.exports = function(styles) {
           }
 
           if(width && height){
+            imgStyle = {
+              width: width,
+              height: height
+            }
+
             if(width > deviceScreen.width){
               const aspectRatio = width / height;
 
