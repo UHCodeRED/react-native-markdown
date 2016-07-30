@@ -77,7 +77,8 @@ var styles = {
     justifyContent: 'flex-start'
   },
   strong: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    flexWrap: 'wrap'
   },
   table: {
     borderWidth: 1,
