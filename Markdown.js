@@ -107,7 +107,8 @@ var styles = {
     padding: 5
   },
   text: {
-    color: '#222222'
+    color: '#222222',
+    flexWrap: 'wrap'
   },
   u: {
     borderColor: '#222222',
