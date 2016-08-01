@@ -109,7 +109,8 @@ var styles = {
   },
   text: {
     color: '#222222',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    flex: 1
   },
   u: {
     borderColor: '#222222',
