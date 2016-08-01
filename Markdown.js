@@ -78,7 +78,8 @@ var styles = {
   },
   strong: {
     fontWeight: 'bold',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    flex: 1
   },
   table: {
     borderWidth: 1,
