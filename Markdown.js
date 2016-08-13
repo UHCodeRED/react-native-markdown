@@ -62,8 +62,10 @@ var styles = {
     flexDirection: 'row'
   },
   listItemBullet: {
-    fontSize: 20,
-    lineHeight: 20
+    fontSize: 0,
+    lineHeight: 0,
+    width: 0,
+    height: 0
   },
   listItemNumber: {
     fontWeight: 'bold'
