@@ -77,9 +77,7 @@ var styles = {
     justifyContent: 'flex-start'
   },
   strong: {
-    fontWeight: 'bold',
-    flexWrap: 'wrap',
-    flex: 1
+    fontWeight: 'bold'
   },
   table: {
     borderWidth: 1,
@@ -109,9 +107,7 @@ var styles = {
     padding: 5
   },
   text: {
-    color: '#222222',
-    flexWrap: 'wrap',
-    flex: 1
+    color: '#222222'
   },
   u: {
     borderColor: '#222222',
