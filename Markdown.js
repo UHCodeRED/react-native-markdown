@@ -98,7 +98,7 @@ var styles = {
     borderBottomWidth: 1,
     borderColor: '#222222',
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'flex-start'
   },
   tableRowLast: {
     borderColor: 'transparent'
