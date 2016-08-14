@@ -16,7 +16,7 @@ var styles = {
     containerBackgroundColor: '#222222'
   },
   em: {
-    fontStyle: 'bold',
+    fontStyle: 'italic',
     flex: 1,
     flexWrap: 'wrap'
   },
