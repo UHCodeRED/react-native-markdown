@@ -16,7 +16,9 @@ var styles = {
     containerBackgroundColor: '#222222'
   },
   em: {
-    fontStyle: 'italic'
+    fontStyle: 'bold',
+    flex: 1,
+    flexWrap: 'wrap'
   },
   heading: {
     fontWeight: '200'
@@ -79,8 +81,7 @@ var styles = {
     justifyContent: 'flex-start'
   },
   strong: {
-    fontWeight: 'bold',
-    flexWrap: 'wrap'
+    fontWeight: 'bold'
   },
   table: {
     borderWidth: 1,
@@ -111,7 +112,6 @@ var styles = {
   },
   text: {
     color: '#222222',
-    flexWrap: 'wrap'
   },
   u: {
     borderColor: '#222222',
