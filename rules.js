@@ -123,7 +123,12 @@ module.exports = function(styles) {
         return React.createElement(Image, {
           key: state.key,
           source: { uri: node.target },
-          style: imgStyle
+          resizeMode: 'cover',
+          style: {
+            flex:1,
+            width: null,
+            height: imgStyle.height
+          }
         });
       }
     },
