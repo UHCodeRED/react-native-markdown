@@ -119,16 +119,26 @@ module.exports = function(styles) {
             }
           }
         }
+        
+        let style;
+        if (imgStyle.width > imgStyle.height) {
+          style = {
+            flex:1,
+            width: null,
+            height: imgStyle.height
+          }
+        } else {
+          style = {
+            width: imgStyle.width,
+            height: imgStyle.height
+          }
+        }
 
         return React.createElement(Image, {
           key: state.key,
           source: { uri: node.target },
           resizeMode: 'cover',
-          style: {
-            flex:1,
-            width: null,
-            height: imgStyle.height
-          }
+          style: style
         });
       }
     },
