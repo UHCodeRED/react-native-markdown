@@ -106,26 +106,38 @@ module.exports = function(styles) {
               height: height
             }
 
-            if(width > deviceScreen.width){
-              const aspectRatio = width / height;
-
-              let newWidth = 0.6 * deviceScreen.width;
-              let newHeight = newWidth / aspectRatio;
-
-              imgStyle = {
-                width: newWidth,
-                height: newHeight
-              }
-            }
+            // if(width > deviceScreen.width){
+            //   const aspectRatio = width / height;
+            //
+            //   let newWidth = 0.6 * deviceScreen.width;
+            //   let newHeight = newWidth / aspectRatio;
+            //
+            //   imgStyle = {
+            //     width: newWidth,
+            //     height: newHeight
+            //   }
+            // }
           }
         }
-        
+
         let style;
         if (imgStyle.width > imgStyle.height) {
-          style = {
-            flex:1,
-            width: null,
-            height: imgStyle.height
+          let aspectRatio = imgStyle.width / imgStyle.height;
+          if (imgStyle.width < 0.7 * deviceScreen.width) {
+            let newWidth = 0.7 * deviceScreen.width;
+            let newHeight = newWidth / aspectRatio;
+
+            style = {
+              width: newWidth,
+              height: newHeight
+            }
+          } else {
+            style = {
+              flex:1,
+              width: null,
+              height: imgStyle.height
+            }
+
           }
         } else {
           style = {
@@ -137,7 +149,7 @@ module.exports = function(styles) {
         return React.createElement(Image, {
           key: state.key,
           source: { uri: node.target },
-          resizeMode: 'cover',
+          resizeMode: 'contain',
           style: style
         });
       }
